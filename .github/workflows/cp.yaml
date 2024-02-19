@@ -56,15 +56,15 @@ jobs:
       #  run: |
        #   cp -r wiki_content/. .
        
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-           python-version: 3.x
+      #- name: Setup Python
+       # uses: actions/setup-python@v2
+        #with:
+         #  python-version: 3.x
 
-      - name: Install dependencies
-        run: |
-          pip install mkdocs-material
+      #- name: Install dependencies
+       # run: |
+        #  pip install mkdocs-material
 
-      - name: Build and deploy documentation
-        run: |
-          mkdocs gh-deploy --force
+      #- name: Build and deploy documentation
+       # run: |
+          # mkdocs gh-deploy --force
