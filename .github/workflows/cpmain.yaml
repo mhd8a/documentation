@@ -1,4 +1,4 @@
-name: Clone and Copy Wiki Content
+name: Build and Deployment Github pages
 
 on:
   push:
