@@ -27,9 +27,9 @@ jobs:
        #    find wiki_content
 
        # Step to create 'docs' directory if it doesn't exist
-      - name: Create docs directory
-        run: |
-          mkdir -p docs
+      #- name: Create docs directory
+       # run: |
+        #  mkdir -p docs
 
       # Step to copy content to mhd8a/documentation repository
      # - name: Copy content to mhd8a/documentation
