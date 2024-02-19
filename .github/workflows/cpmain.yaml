@@ -1,11 +1,11 @@
 name: Clone and Copy Wiki Content
 
 on:
-  #push:
-   # branches:
-    #   - master 
-     #  - main
-  workflow_dispatch:
+  push:
+    branches:
+        - master 
+        - main
+  
 
 permissions:
   contents: write
@@ -18,13 +18,13 @@ jobs:
         uses: actions/checkout@v3
 
       # Step to clone wiki content from the source repository
-      - name: Clone wiki content
-        run: |
-          git clone https://github.com/mhd8a/demopages.wiki.git wiki_content
-          echo " Current Directory: $(pwd)"
-      - name: list the clone files
-        run: |
-           find wiki_content
+    #  - name: Clone wiki content
+      #  run: |
+       #   git clone https://github.com/mhd8a/demopages.wiki.git wiki_content
+        #  echo " Current Directory: $(pwd)"
+     # - name: list the clone files
+      #  run: |
+       #    find wiki_content
 
        # Step to create 'docs' directory if it doesn't exist
       - name: Create docs directory
@@ -32,15 +32,15 @@ jobs:
           mkdir -p docs
 
       # Step to copy content to mhd8a/documentation repository
-      - name: Copy content to mhd8a/documentation
-        run: |
-          cp -r wiki_content/* docs/
-          cd docs/
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          git add .
-          git commit -m "Copy wiki content"
-          git push     
+     # - name: Copy content to mhd8a/documentation
+      #  run: |
+       #   cp -r wiki_content/* docs/
+        #  cd docs/
+        #  git config --global user.email "you@example.com"
+         # git config --global user.name "Your Name"
+         # git add .
+         # git commit -m "Copy wiki content"
+         # git push     
         
       # Step to copy wiki content to the destination repository
       #- name: Copy wiki content to destination repository
@@ -56,15 +56,15 @@ jobs:
       #  run: |
        #   cp -r wiki_content/. .
        
-      #- name: Setup Python
-       # uses: actions/setup-python@v2
-        #with:
-         #  python-version: 3.x
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+           python-version: 3.x
 
-      #- name: Install dependencies
-       # run: |
-        #  pip install mkdocs-material
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
 
-      #- name: Build and deploy documentation
-       # run: |
-        #  mkdocs gh-deploy --force
+      - name: Build and deploy documentation
+        run: |
+          mkdocs gh-deploy --force
