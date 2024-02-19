@@ -3,9 +3,9 @@ name: Clone and Copy Wiki Content
 on:
   push:
     branches:
-    #  - master 
+       - master 
        - main
-  workflow_dispatch:
+  
 
 permissions:
   contents: write
