@@ -3,8 +3,8 @@ name: Clone and Copy Wiki Content
 on:
   push:
     branches:
-      - master 
-      - main
+    #  - master 
+       - main
 
 permissions:
   contents: write
