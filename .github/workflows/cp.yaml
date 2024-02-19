@@ -1,11 +1,11 @@
 name: Clone and Copy Wiki Content
 
 on:
-  push:
-    branches:
-       - master 
-       - main
-  
+ # push:
+    # branches:
+     #  - master 
+    # - main
+   workflow_dispatch:  
 
 permissions:
   contents: write
